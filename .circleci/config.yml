@@ -1,0 +1,24 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: golang:1.12
+    steps:
+      - checkout
+      - restore_cache:
+          key: cache-v1-{{ checksum "go.sum" }}
+      - run:
+          command: |
+            mkdir -p .cache && export GOPATH=$(pwd)/.cache
+            CGO_ENABLED=0 GO111MODULE=on go test -v ./...
+      - save_cache:
+          key: cache-v1-{{ checksum "go.sum" }}
+          paths:
+            - .cache
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
