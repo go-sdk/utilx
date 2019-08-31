@@ -59,15 +59,15 @@ func (queue *Queue) Pop() interface{} {
 }
 
 func (queue *Queue) PopN(n int) []interface{} {
-	if n <= 0 {
-		return nil
-	}
 	if queue.enableLock {
 		queue.mu.Lock()
 		defer queue.mu.Unlock()
 	}
 	if queue.data.Len() < n {
 		n = queue.data.Len()
+	}
+	if n <= 0 {
+		return nil
 	}
 	vs := make([]interface{}, n)
 	for i := 0; i < n; i++ {
