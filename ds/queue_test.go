@@ -28,4 +28,11 @@ func TestNewQueue(t *testing.T) {
 		t.Logf("len3: %d", queue.Len())
 	}
 	t.Logf("len0: %d", queue.Len())
+	t.Logf("pop %d: %v", queue.Len(), queue.PopN(queue.Len()))
+	t.Logf("len0: %d", queue.Len())
+
+	queue.PushN(1)
+	t.Logf("pop: %v", queue.Pop())
+	t.Logf("pop: %v", queue.PopN(0))
+	t.Logf("pop: %v", queue.PopN(1))
 }
