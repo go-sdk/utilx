@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: golang:1.12
+      - image: golang:latest
     steps:
       - checkout
       - restore_cache:
