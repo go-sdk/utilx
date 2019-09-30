@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: golang:latest
+      - image: golang:1.13-alpine
     steps:
       - checkout
       - restore_cache:
