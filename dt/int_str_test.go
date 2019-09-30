@@ -19,4 +19,5 @@ func TestIntStr_UnmarshalJSON(t *testing.T) {
 	assert.Equal(t, IntStr(1), is)
 
 	assert.NotNil(t, json.UnmarshalFromString(`1`, &is))
+	assert.NotNil(t, json.UnmarshalFromString(`"a"`, &is))
 }
