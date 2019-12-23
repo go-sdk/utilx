@@ -1,7 +1,6 @@
 # utilx
 
-[![CircleCI](https://img.shields.io/circleci/build/github/go-sdk/utilx)](https://circleci.com/gh/go-sdk/utilx)
-[![Travis](https://img.shields.io/travis/com/go-sdk/utilx)](https://travis-ci.com/go-sdk/utilx)
+[![GithubAction](https://github.com/go-sdk/utilx/workflows/Go/badge.svg)](https://github.com/go-sdk/utilx/actions)
 [![Codecov](https://img.shields.io/codecov/c/github/go-sdk/utilx)](https://codecov.io/gh/go-sdk/utilx)
 [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue)](./LICENSE)
 
