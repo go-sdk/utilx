@@ -16,6 +16,10 @@ var data = &Data{
 	C: "..",
 }
 
+func TestMarshalToString(t *testing.T) {
+	t.Log(MarshalToString(data))
+}
+
 func TestMustMarshal(t *testing.T) {
 	t.Log(string(MustMarshal(data)))
 }

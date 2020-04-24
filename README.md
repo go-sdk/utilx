@@ -1,8 +1,8 @@
-# utilx
+# UtilX
 
-[![GithubAction](https://github.com/go-sdk/utilx/workflows/Go/badge.svg)](https://github.com/go-sdk/utilx/actions)
-[![Codecov](https://img.shields.io/codecov/c/github/go-sdk/utilx)](https://codecov.io/gh/go-sdk/utilx)
-[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue)](./LICENSE)
+![Go](https://github.com/go-sdk/utilx/workflows/Go/badge.svg)
+![Codecov](https://img.shields.io/codecov/c/github/go-sdk/utilx)
+![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue)
 
 ## Install
 
