@@ -1,26 +1,36 @@
 package json
 
 import (
-	"github.com/json-iterator/go"
+	"encoding/json"
 )
 
 var (
-	json = jsoniter.ConfigCompatibleWithStandardLibrary
+	Marshal       = json.Marshal
+	MarshalIndent = json.MarshalIndent
 
-	Marshal         = json.Marshal
-	MarshalToString = json.MarshalToString
-	MarshalIndent   = json.MarshalIndent
-
-	Unmarshal           = json.Unmarshal
-	UnmarshalFromString = json.UnmarshalFromString
+	Unmarshal = json.Unmarshal
 
 	NewDecoder = json.NewDecoder
 	NewEncoder = json.NewEncoder
 )
 
+func MarshalToString(v interface{}) (string, error) {
+	bs, err := Marshal(v)
+	return string(bs), err
+}
+
+func UnmarshalFromString(str string, v interface{}) error {
+	return Unmarshal([]byte(str), v)
+}
+
 func MustMarshal(v interface{}) []byte {
 	bs, _ := Marshal(v)
 	return bs
+}
+
+func MustMarshalToString(v interface{}) string {
+	bs, _ := Marshal(v)
+	return string(bs)
 }
 
 func HumanMarshal(v interface{}) string {
