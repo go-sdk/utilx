@@ -33,7 +33,13 @@ func MustMarshalToString(v interface{}) string {
 	return string(bs)
 }
 
-func HumanMarshal(v interface{}) string {
+func HumanMarshal(v interface{}) []byte {
 	bs, _ := MarshalIndent(v, "", "  ")
-	return string(bs)
+	return bs
+}
+
+func ReMarshal(bs []byte) []byte {
+	var data interface{}
+	_ = Unmarshal(bs, &data)
+	return MustMarshal(data)
 }

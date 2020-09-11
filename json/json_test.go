@@ -44,3 +44,7 @@ func TestMustMarshalToString(t *testing.T) {
 func TestHumanMarshal(t *testing.T) {
 	t.Log(HumanMarshal(data))
 }
+
+func TestReMarshal(t *testing.T) {
+	assert.Equal(t, dataStr, string(ReMarshal([]byte(`{"A"  :true,"B" :      9999,"C":".."    }`))))
+}
